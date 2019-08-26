@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
+#define number_size 100
+
 struct target
 {
 	int number;
@@ -58,7 +60,7 @@ int main()
 	srand((unsigned int)time(0));
 	printf("Stack start\n");
 	
-	for(int i = 0; i < 10; i++){
+	for(int i = 0; i < number_size; i++){
 		struct target* node = NULL;
 		node = (struct target*)calloc(1, sizeof(struct target));
 		node->number = rand() % 1000;
@@ -69,7 +71,7 @@ int main()
 
 	printf("Pops..\n");
 
-	for(int i = 0; i < 10; i++){
+	for(int i = 0; i < number_size; i++){
 		struct target* node = NULL;
 		node= main_stack->pop(main_stack);
 		printf("%d ", node->number);
